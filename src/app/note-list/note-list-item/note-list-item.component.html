@@ -1,0 +1,8 @@
+<li class="list-group-item">
+  {{ note }} | {{ timer }} | <button
+    class="btn btn-danger"
+    (click)="handleDeleteClick()">
+    Delete Note
+    <ng-content></ng-content>
+  </button>
+</li>

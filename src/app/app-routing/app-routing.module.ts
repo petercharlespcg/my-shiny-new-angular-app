@@ -1,3 +1,4 @@
+import { UsersResolveGuard } from './../guards/UsersResolve/users-resolve.guard';
 import { ConfirmationGuard } from './../guards/confirmation/confirmation.guard';
 import { MessageListComponent } from './../components/message-list/message-list.component';
 import { AuthGuard } from './../guards/auth/auth.guard';
@@ -20,9 +21,11 @@ const appRoutes: Routes = [
     component: UsersComponent,
     pathMatch: 'prefix',
     canActivateChild: [ AuthGuard ],
+    resolve: {
+      testusers: UsersResolveGuard
+    },
     children: [
       { path: ':userId', component: UserDetailsComponent },
-      // { path: '', component: PlaceholderComponent }
   ] },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ]},
   { path: '**', redirectTo: '/home', pathMatch: 'full' }

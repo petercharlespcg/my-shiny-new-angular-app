@@ -237,6 +237,6 @@ export class UsersComponent {
         "bs": "target end-to-end models"
       }
     }
-  ]
+  ];
 
 }

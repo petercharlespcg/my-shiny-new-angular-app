@@ -22,6 +22,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import { OneComponent } from './components/one/one.component';
+import { TwoComponent } from './components/two/two.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
     UsersComponent,
     UserDetailsComponent,
     PlaceholderComponent,
+    OneComponent,
+    TwoComponent,
 
   ],
   imports: [

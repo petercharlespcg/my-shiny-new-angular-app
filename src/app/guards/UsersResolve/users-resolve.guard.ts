@@ -13,7 +13,8 @@ export class UsersResolveGuard implements Resolve<IUser[]>/* CanLoad */ {
   constructor(private userService: UserService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): IUser[] | Observable<IUser[]> | Promise<IUser[]> {
-    return this.userService.getUsers();
+    return this.userService.getUsersViaREST();/* .getUsers(); */
+
   }
 
   // canLoad(

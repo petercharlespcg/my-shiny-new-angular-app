@@ -1,3 +1,5 @@
+import { UserResolveGuard } from './../guards/user-resolve.guard';
+import { BuiltInStrDirComponent } from './../components/built-in-str-dir/built-in-str-dir.component';
 import { ParentComponent } from './../components/parent/parent.component';
 import { UsersResolveGuard } from './../guards/UsersResolve/users-resolve.guard';
 import { ConfirmationGuard } from './../guards/confirmation/confirmation.guard';
@@ -26,10 +28,11 @@ const appRoutes: Routes = [
       testusers: UsersResolveGuard
     },
     children: [
-      { path: ':userId', component: UserDetailsComponent },
+      { path: ':userId', component: UserDetailsComponent, resolve: { user: UserResolveGuard} },
       { path: '', component: PlaceholderComponent },
   ] },
   { path: 'parent', component: ParentComponent },
+  { path: 'str-dir', component: BuiltInStrDirComponent },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ]},
   { path: '', redirectTo: '/users', pathMatch: 'full' },
   { path: '**', redirectTo: '/users', pathMatch: 'full' }

@@ -29,5 +29,4 @@ export class OneComponent implements OnInit, OnDestroy {
   changeProp() {
     this.userService.setProp('bar');
   }
-
 }

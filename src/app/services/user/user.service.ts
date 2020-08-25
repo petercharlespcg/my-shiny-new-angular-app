@@ -284,7 +284,7 @@ export class UserService {
   }
 
   getUserByIdViaRest(id: number): Observable<IUser> | any {
-    return this.http.get<IUser>(`${this._rootUrl}/${id}asfdasdf`)
+    return this.http.get<IUser>(`${this._rootUrl}/${id}`)
       .pipe(retry(3), catchError(err => {
         console.log('Got an error as: ', err);
         return err;

@@ -1,0 +1,32 @@
+<button class="btn btn-primary" (click)="showList = !showList"> Toggle List Visibility </button>
+<hr>
+<div *ngIf="showList">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let message of messages; let i = index">
+      Index {{ i }}, Message: {{ message }}
+    </li>
+  </ul>
+</div>
+
+<hr>
+
+<h4>NgSwitch</h4>
+<input type="text" class="form-control" [(ngModel)]="alertType"><br>
+
+<div [ngSwitch]="alertType">
+  <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">
+    This is a success alert—check it out!
+  </div>
+  <div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert">
+    This is a danger alert—check it out!
+  </div>
+  <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">
+    This is a warning alert—check it out!
+  </div>
+  <div *ngSwitchCase="'info'" class="alert alert-info" role="alert">
+    This is a info alert—check it out!
+  </div>
+  <div *ngSwitchDefault class="alert" role="alert">
+    This is a default alert.
+  </div>
+</div>

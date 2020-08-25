@@ -24,6 +24,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { OneComponent } from './components/one/one.component';
 import { TwoComponent } from './components/two/two.component';
+import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-str-dir.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { TwoComponent } from './components/two/two.component';
     PlaceholderComponent,
     OneComponent,
     TwoComponent,
+    BuiltInStrDirComponent,
 
   ],
   imports: [

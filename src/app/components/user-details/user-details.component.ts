@@ -36,13 +36,19 @@ export class UserDetailsComponent implements OnInit {
             () => alert('Fetch of User Details Completed!')
           )); */
 
-    this.activatedRoute.params.subscribe(params => {
-      this.userService.getUserByIdViaRest(+params['userId']).subscribe(
-        user => this.user = user,
-        err => console.log("Got an error while fetching the user details: ", err),
-        () => alert('Fetch of User Details Completed!')
-      );
-    });
+    // this.activatedRoute.params.subscribe(params => {
+    //   this.userService.getUserByIdViaRest(+params['userId']).subscribe(
+    //     user => this.user = user,
+    //     err => console.log("Got an error while fetching the user details: ", err),
+    //     () => alert('Fetch of User Details Completed!')
+    //   );
+    // });
+    this.activatedRoute.data.subscribe(
+      (res) => {
+        console.log(res);
+        this.user = res.user;
+      }
+    )
   }
 
   createUser() {

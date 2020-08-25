@@ -26,9 +26,11 @@ const appRoutes: Routes = [
     },
     children: [
       { path: ':userId', component: UserDetailsComponent },
+      { path: '', component: PlaceholderComponent },
   ] },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ]},
-  { path: '**', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/users', pathMatch: 'full' },
+  { path: '**', redirectTo: '/users', pathMatch: 'full' }
 ]
 
 @NgModule({

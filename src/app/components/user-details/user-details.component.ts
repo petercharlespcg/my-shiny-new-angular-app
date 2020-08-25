@@ -18,15 +18,30 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.users = this.userService.getUsers();
+    // this.users = this.userService.getUsers();
 
-    this.activatedRoute.params.subscribe((params) => {
+    // this.activatedRoute.params.subscribe((params) => {
       // console.log('Got the params as: ', params);
-      this.user = this.users.filter((user) => {
-        return user.id === +params.userId;
-      })[0];
+      // this.user = this.users.filter((user) => {
+      //   return user.id === +params.userId;
+      // })[0];
 
-      this.activatedRoute.queryParams.subscribe((qs) => console.log('Got the QS as : ', qs));
+      // this.activatedRoute.queryParams.subscribe((qs) => console.log('Got the QS as : ', qs));
+    // });
+
+/*     this.activatedRoute.params.toPromise().then(params =>
+            this.userService.getUserByIdViaRest(+params['userId']).subscribe(
+        user => this.user = user,
+        err => console.log("Got an error while fetching the user details: ", err),
+        () => alert('Fetch of User Details Completed!')
+      )); */
+      
+    this.activatedRoute.params.subscribe( params => {
+      this.userService.getUserByIdViaRest(+params['userId']).subscribe(
+        user => this.user = user,
+        err => console.log("Got an error while fetching the user details: ", err),
+        () => alert('Fetch of User Details Completed!')
+      );
     });
   }
 

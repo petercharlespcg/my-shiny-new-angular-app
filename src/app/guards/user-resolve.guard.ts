@@ -8,13 +8,8 @@ import { IUser } from '../interfaces/user';
   providedIn: 'root'
 })
 export class UserResolveGuard implements Resolve<IUser> {
-
   constructor(private userService: UserService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): IUser | Observable<IUser> | Promise<IUser> {
-    // return this.userService.getUserByIdViaRest(route.paramMap.get('userId'));
     return this.userService.getUserByIdViaRest(route.params['userId']);
   }
-
-
-
 }

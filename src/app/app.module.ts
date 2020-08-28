@@ -28,6 +28,7 @@ import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-s
 import { BuiltInAttrDirComponent } from './components/built-in-attr-dir/built-in-attr-dir.component';
 import { ChangeCaseDirective } from './directives/changeCase/change-case.directive';
 import { DirectiveHostComponent } from './components/directive-host/directive-host.component';
+import { UnlessDirective } from './directives/unless/unless.directive';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { DirectiveHostComponent } from './components/directive-host/directive-ho
     BuiltInAttrDirComponent,
     ChangeCaseDirective,
     DirectiveHostComponent,
+    UnlessDirective,
 
   ],
   imports: [

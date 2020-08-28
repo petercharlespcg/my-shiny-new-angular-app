@@ -1,2 +1,18 @@
 <!-- <input type="text" value="Test" appChangeCase [case]="'lower'"> -->
 <input type="text" value="Test" [appChangeCase]="'lower'">
+<hr>
+
+<div *ngIf="showUnless">
+  This will show ngIf
+</div>
+
+<ng-template [ngIf]="showUnless">
+  <div>
+    This will Show template ngIf
+  </div>
+</ng-template>
+
+<!-- <div *appUnless="false"> -->
+<div *appUnless="true">
+  This will show unless
+</div>

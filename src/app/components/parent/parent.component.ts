@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
   user: { name: string } = { name: 'Jacob'};
 
+  // dateToday: string;
+  dateToday: Date;
+
   changeProperty() {
     this.user.name = 'Sam';
   }
@@ -19,6 +22,8 @@ export class ParentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // this.dateToday = new Date().toDateString();
+    this.dateToday = new Date();
   }
 
 }

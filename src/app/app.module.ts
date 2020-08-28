@@ -30,6 +30,7 @@ import { ChangeCaseDirective } from './directives/changeCase/change-case.directi
 import { DirectiveHostComponent } from './components/directive-host/directive-host.component';
 import { UnlessDirective } from './directives/unless/unless.directive';
 import { AppendorPipe } from './pipes/apendor/appendor.pipe';
+import { FilterPipe } from './pipes/filter/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AppendorPipe } from './pipes/apendor/appendor.pipe';
     DirectiveHostComponent,
     UnlessDirective,
     AppendorPipe,
+    FilterPipe,
 
   ],
   imports: [

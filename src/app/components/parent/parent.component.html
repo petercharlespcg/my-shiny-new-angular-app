@@ -11,10 +11,25 @@
   Pipes
 </h4>
 
-<ul class="list-group">
+<!-- <ul class="list-group">
   <li class="list-group-item">Date without the Pipe: {{ this.dateToday }}</li>
   <li class="list-group-item">Date with the Pipe: {{ this.dateToday | date }}</li>
   <li class="list-group-item">Date with the Pipe and Params: {{ this.dateToday | date:'full' | lowercase }}</li>
   <li class="list-group-item">Date with the Pipe and Params: {{ this.dateToday | date:'full' | uppercase }}</li>
-</ul>
+</ul> -->
 
+<hr>
+
+<h4>
+  Pure and Impure Pipes
+</h4>
+
+<button class="btn btn-primary" (click)="addUser()">Add User</button>
+
+<input type="text" [(ngModel)]="filterIdType">
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of users | filter : filterIdType">
+    <div class="alert alert-success" role="alert">UserID: {{ user.id }}, User Name: {{ user.name }}</div>
+  </li>
+</ul>

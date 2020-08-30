@@ -2,11 +2,18 @@ import { Laptop } from './../../classes/laptop';
 import { UserService } from './../../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/interfaces/user';
+import { HookLogger } from 'src/app/decorators/class.decorator';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.scss']
+})
+@HookLogger({
+  hooks: [
+    'ngOnInit',
+    'ngAfterViewInit'
+  ]
 })
 export class ParentComponent implements OnInit {
   user: { name: string } = { name: 'Jacob'};
@@ -28,8 +35,8 @@ export class ParentComponent implements OnInit {
 
   ngOnInit(): void {
     // this.dateToday = new Date().toDateString();
-    this.dateToday = new Date();
-    this.users = this.userService.getUsers();
+    // this.dateToday = new Date();
+    // this.users = this.userService.getUsers();
     // this.userService.getUsersViaREST().subscribe(
     //   users => this.users = users
     // );

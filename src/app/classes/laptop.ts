@@ -4,5 +4,4 @@ import { Sticker } from "../decorators/class.decorator";
   stickers: ['GitHub', 'Google', 'MOzilla', 'Angular']
 })
 export class Laptop {
-
 }

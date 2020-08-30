@@ -33,13 +33,13 @@ export class MessageListComponent implements OnInit, AfterViewInit, AfterContent
     // this.firstProjectedMessageComponent.message = 'This was changed from message list component\'s ngAfterContentInit method';
     this.allProjectedMessageComponents.toArray().forEach(m =>
       m.message = 'Changed the message from message list constructor');
-    this.tempMessageComponent.message = 'This projected message was also changed';
+    // this.tempMessageComponent.message = 'This projected message was also changed';
   }
   ngAfterViewInit(): void {
     // this.firstMessageComponent.message = 'This was changed from message list component\'s ngAfterViewInit method';
-    this.allMessageComponents.toArray().forEach(m => {
-      m.message= 'This was changed from message list component\'s ngAfterViewInit method';
-    });
+    // this.allMessageComponents.toArray().forEach(m => {
+    //   m.message= 'This was changed from message list component\'s ngAfterViewInit method';
+    // });
   }
 
   ngOnInit(): void {

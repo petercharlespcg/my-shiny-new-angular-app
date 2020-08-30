@@ -15,5 +15,4 @@ export class FilterPipe implements PipeTransform {
       return filterIdType === 'odd' ? input.filter(user => user.id % 2 !== 0) : input.filter(user => user.id % 2 === 0);
     }
   }
-
 }

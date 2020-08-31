@@ -2,7 +2,7 @@ import { Laptop } from './../../classes/laptop';
 import { UserService } from './../../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/interfaces/user';
-import { HookLogger } from 'src/app/decorators/class.decorator';
+import { HookLogger, Readonly } from 'src/app/decorators/class.decorator';
 
 @Component({
   selector: 'app-parent',
@@ -16,6 +16,7 @@ import { HookLogger } from 'src/app/decorators/class.decorator';
   ]
 })
 export class ParentComponent implements OnInit {
+  @Readonly('This is a readonly string and will not change!') readonly: string;
   user: { name: string } = { name: 'Jacob'};
   users: IUser[];
   filterIdType: string = '';
@@ -41,7 +42,10 @@ export class ParentComponent implements OnInit {
     //   users => this.users = users
     // );
     let laptop: Laptop = new Laptop();
-    console.log(laptop['stickers']);
+    // console.log(laptop['stickers']);
+    console.log(this.readonly);
+    this.readonly = 'This was changed';
+    console.log(this.readonly);
   }
 
   addUser() {

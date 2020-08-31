@@ -11,17 +11,18 @@ import { HookLogger, Readonly } from 'src/app/decorators/class.decorator';
 })
 @HookLogger({
   hooks: [
-    'ngOnInit',
+    // 'ngOnInit',
     'ngAfterViewInit'
   ]
 })
 export class ParentComponent implements OnInit {
+
   @Readonly('This is a readonly string and will not change!') readonly: string;
   user: { name: string } = { name: 'Jacob'};
   users: IUser[];
   filterIdType: string = '';
 
-  // dateToday: string;
+  // // dateToday: string;
   dateToday: Date;
 
   changeProperty() {
@@ -35,7 +36,7 @@ export class ParentComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    // this.dateToday = new Date().toDateString();
+    // // this.dateToday = new Date().toDateString();
     // this.dateToday = new Date();
     // this.users = this.userService.getUsers();
     // this.userService.getUsersViaREST().subscribe(

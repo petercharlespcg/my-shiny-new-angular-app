@@ -1,3 +1,4 @@
+import { NewUserComponent } from './../components/new-user/new-user.component';
 import { UserResolveGuard } from './../guards/user-resolve.guard';
 import { BuiltInStrDirComponent } from './../components/built-in-str-dir/built-in-str-dir.component';
 import { ParentComponent } from './../components/parent/parent.component';
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
       { path: '', component: PlaceholderComponent },
   ] },
   { path: 'parent', component: ParentComponent },
+  { path: 'new-user', component: NewUserComponent },
   { path: 'str-dir', component: BuiltInStrDirComponent },
   { path: 'attr-dir', component: BuiltInAttrDirComponent },
   { path: 'directives', component: DirectiveHostComponent },

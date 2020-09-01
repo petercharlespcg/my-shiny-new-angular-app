@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 // import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +32,7 @@ import { UnlessDirective } from './directives/unless/unless.directive';
 import { AppendorPipe } from './pipes/apendor/appendor.pipe';
 import { FilterPipe } from './pipes/filter/filter.pipe';
 import { NewUserComponent } from './components/new-user/new-user.component';
+import { NewUserReactiveComponent } from './components/new-user-reactive/new-user-reactive.component';
 
 @NgModule({
   declarations: [
@@ -62,12 +63,14 @@ import { NewUserComponent } from './components/new-user/new-user.component';
     AppendorPipe,
     FilterPipe,
     NewUserComponent,
+    NewUserReactiveComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

@@ -16,6 +16,7 @@ import { NgModule, Component } from '@angular/core';
 import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
 import { BuiltInAttrDirComponent } from '../components/built-in-attr-dir/built-in-attr-dir.component';
 import { DirectiveHostComponent } from '../components/directive-host/directive-host.component';
+import { NewUserReactiveComponent } from '../components/new-user-reactive/new-user-reactive.component';
 // import { CommonModule } from '@angular/common';
 
 const appRoutes: Routes = [
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   { path: 'str-dir', component: BuiltInStrDirComponent },
   { path: 'attr-dir', component: BuiltInAttrDirComponent },
   { path: 'directives', component: DirectiveHostComponent },
+  { path: 'new-user-reactive', component: NewUserReactiveComponent },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ]},
   { path: '', redirectTo: '/users', pathMatch: 'full' },
   { path: '**', redirectTo: '/users', pathMatch: 'full' }

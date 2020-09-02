@@ -1,4 +1,5 @@
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { filter } from 'rxjs/operators';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -42,7 +43,16 @@ export class NewUserReactiveComponent implements OnInit {
         catchPhrase: new FormControl('See world differently'),
         bs: new FormControl('A company that creates beautiful content for travel boards and hotel'),
       }),
+      hobbies: new FormArray([])
     });
+  }
+
+  addHobby() {
+    (<FormArray>this.userForm.get('hobbies')).push(new FormControl(''));
+  }
+
+  deleteHobby(index) {
+    (<FormArray>this.userForm.get('hobbies')).removeAt(index);
   }
 
   submit() {

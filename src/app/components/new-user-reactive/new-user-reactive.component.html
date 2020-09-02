@@ -73,8 +73,17 @@
       <input type="text" formControlName="bs" class="form-control">
     </div>
   </fieldset>
+
+  <fieldset>
+    <legend>Hobbies | <span class="glyphicon glyphicon-plus" (click)="addHobby()"></span></legend>
+    <!-- <div class="input-group" *ngFor="let hobbyControl of userForm.get('hobbies').value; let i = index"> -->
+    <div class="input-group" *ngFor="let hobbyControl of userForm.get('hobbies')['controls']; let i = index">
+      <input type="text" class="form-control" [formControlName]="i" placeholder="Hobby">
+      <div class="input-group-append">
+        <span class="input-group-addon glyphicon glyphicon-trash" (click)="deleteHobby(i)"></span>
+      </div>
+    </div>
+  </fieldset>
+  <button class="btn-primary" type="submit">Submit</button>
 </form>
-
-<button class="btn-primary" type="submit">Submit</button>
-
 </div>

@@ -10,80 +10,83 @@
         <p *ngIf="name.errors.pattern">Name can only be John Doe</p>
       </div>
     </div>
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" formControlName="username" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" formControlName="email" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="phone">Phone</label>
-    <input type="text" formControlName="phone" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="website">Website</label>
-    <input type="text" formControlName="website" class="form-control">
-  </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" formControlName="username" class="form-control">
+      <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+        <p *ngIf="username.errors.unique">UserName must be unique!</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" formControlName="phone" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" formControlName="website" class="form-control">
+    </div>
 
-  <fieldset formGroupName="address">
-    <legend>Address</legend>
-    <div class="form-group">
-      <label for="street">Street</label>
-      <input type="text" formControlName="street" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="suite">Suite</label>
-      <input type="text" formControlName="suite" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="city">City</label>
-      <input type="text" formControlName="city" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="zipcode">Zipcode</label>
-      <input type="text" formControlName="zipcode" class="form-control">
-    </div>
-    <fieldset formGroupName="geo">
-      <legend>Geo</legend>
+    <fieldset formGroupName="address">
+      <legend>Address</legend>
       <div class="form-group">
-        <label for="lat">Lat</label>
-        <input type="text" formControlName="lat" class="form-control">
+        <label for="street">Street</label>
+        <input type="text" formControlName="street" class="form-control">
       </div>
       <div class="form-group">
-        <label for="lng">Lng</label>
-        <input type="text" formControlName="lng" class="form-control">
+        <label for="suite">Suite</label>
+        <input type="text" formControlName="suite" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" formControlName="city" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="zipcode">Zipcode</label>
+        <input type="text" formControlName="zipcode" class="form-control">
+      </div>
+      <fieldset formGroupName="geo">
+        <legend>Geo</legend>
+        <div class="form-group">
+          <label for="lat">Lat</label>
+          <input type="text" formControlName="lat" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="lng">Lng</label>
+          <input type="text" formControlName="lng" class="form-control">
+        </div>
+      </fieldset>
+    </fieldset>
+
+    <fieldset formGroupName="company">
+      <legend>Company</legend>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="catchPhrase">CatchPhrase</label>
+        <input type="text" formControlName="catchPhrase" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="bs">BS</label>
+        <input type="text" formControlName="bs" class="form-control">
       </div>
     </fieldset>
-  </fieldset>
 
-  <fieldset formGroupName="company">
-    <legend>Company</legend>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" formControlName="name" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="catchPhrase">CatchPhrase</label>
-      <input type="text" formControlName="catchPhrase" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="bs">BS</label>
-      <input type="text" formControlName="bs" class="form-control">
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>Hobbies | <span class="glyphicon glyphicon-plus" (click)="addHobby()"></span></legend>
-    <!-- <div class="input-group" *ngFor="let hobbyControl of userForm.get('hobbies').value; let i = index"> -->
-    <div class="input-group" *ngFor="let hobbyControl of userForm.get('hobbies')['controls']; let i = index">
-      <input type="text" class="form-control" [formControlName]="i" placeholder="Hobby">
-      <div class="input-group-append">
-        <span class="input-group-addon glyphicon glyphicon-trash" (click)="deleteHobby(i)"></span>
+    <fieldset>
+      <legend>Hobbies | <span class="glyphicon glyphicon-plus" (click)="addHobby()"></span></legend>
+      <!-- <div class="input-group" *ngFor="let hobbyControl of userForm.get('hobbies').value; let i = index"> -->
+      <div class="input-group" *ngFor="let hobbyControl of userForm.get('hobbies')['controls']; let i = index">
+        <input type="text" class="form-control" [formControlName]="i" placeholder="Hobby">
+        <div class="input-group-append">
+          <span class="input-group-addon glyphicon glyphicon-trash" (click)="deleteHobby(i)"></span>
+        </div>
       </div>
-    </div>
-  </fieldset>
-  <button class="btn-primary" type="submit">Submit</button>
-</form>
+    </fieldset>
+    <button class="btn-primary" type="submit">Submit</button>
+  </form>
 </div>

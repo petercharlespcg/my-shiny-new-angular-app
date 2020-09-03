@@ -65,4 +65,8 @@ export class NewUserReactiveComponent implements OnInit {
 
   }
 
+  resetForm() {
+    this.userForm.reset();
+  }
+
 }

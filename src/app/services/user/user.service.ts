@@ -2,6 +2,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { IUser } from './../../interfaces/user';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 
 import { map,retry, catchError } from "rxjs/operators";
 
@@ -247,8 +248,14 @@ export class UserService {
   private _rootPostsUrl: string = 'https://jsonplaceholder.typicode.com/posts';
   private _prop: string = 'foo';
   public propChanged: BehaviorSubject<string> = new BehaviorSubject<string>(this._prop);
+  private userList: AngularFireList<any>;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private firebase: AngularFireDatabase
+    ) {
+      this.userList = this.firebase.list('users');
+    }
 
   getProp(): string {
     return this._prop;

@@ -318,4 +318,21 @@ export class UserService {
     let params = new HttpParams().set('userId', id.toString());
     return this.http.get(this._rootPostsUrl, { params })
   }
+
+  getUsersFromFirebase() {
+    return this.userList;
+  }
+
+  addAUserToFirebase(user: IUser) {
+    this.userList.push(user);
+  }
+
+  updateAUserOnFirebase(user: IUser) {
+    let $key = user.$key;
+    this.userList.update($key, user);
+  }
+
+  deleteAUserFromFirebase($key: string) {
+    this.userList.remove($key);
+  }
 }

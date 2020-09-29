@@ -1,3 +1,7 @@
+Angular 9 Masterclass with TypeScript, Firebase, and Material
+https://proquestpubliclibrary-safaribooksonline-com.ezproxy.torontopubliclibrary.ca/video/web-development/9781800567764
+
+
 # MyShinyNewAngularApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
